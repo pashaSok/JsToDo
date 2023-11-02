@@ -1,12 +1,13 @@
 body {
   background-color: lightgreen;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .container {
   background: #fff;
   border: 3px solid #000;
   border-radius: 30px;
-  width: 800px;
+  width: 500px;
   margin: 0 auto;
   padding: 40px;
 }
@@ -14,6 +15,10 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+}
+.container .header .header-img {
+  width: 30px;
+  height: 30px;
 }
 .container .header .title {
   display: inline-block;
@@ -30,6 +35,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #edeef0;
+  margin-bottom: 30px;
 }
 .container .nav-button__wrapper .add-task-field {
   width: 100%;
@@ -49,8 +55,9 @@ body {
 .container .nav-button__wrapper .add-task-button {
   margin-left: 20px;
   border: 0;
-  padding: 15px 40px;
+  padding: 15px 20px;
   font-size: 18px;
+  white-space: nowrap;
   background-color: #ff5945;
   color: #fff;
   border-radius: 40px;
@@ -59,4 +66,71 @@ body {
   transition: 0.5s;
   background-color: rgba(243, 132, 122, 0.8862745098);
   cursor: pointer;
+}
+.container .task-buttons__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.container .task-buttons__wrapper .control-button {
+  border: 0;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  background-color: #fff;
+}
+.container .task-buttons__wrapper .control-button:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0.8;
+}
+.container .counter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 30px;
+}
+.container .task-field__wrapper .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.container .task-field__wrapper .task:hover {
+  background-color: #ffffe0;
+  transition: 0.5s;
+}
+.container .task-field__wrapper .task .task-right__wrapper {
+  display: flex;
+  align-items: center;
+}
+.container .task-field__wrapper .task .task-right__wrapper .task-checkbox {
+  width: 26px;
+  height: 26px;
+  margin-right: 15px;
+}
+.container .task-field__wrapper .task .task-right__wrapper .task-field__name {
+  font-weight: 600;
+  font-size: 16px;
+}
+.container .task-field__wrapper .task .task-buttons {
+  display: flex;
+  align-items: center;
+}
+.container .task-field__wrapper .task .task-buttons .update-button {
+  margin-right: 10px;
+}
+.container .task-field__wrapper .task .task-buttons .task-button-control {
+  width: 20px;
+  height: 20px;
+}
+.container .task-field__wrapper .task .task-buttons .task-button-control:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f2f2f2;
 }/*# sourceMappingURL=style.css.map */
