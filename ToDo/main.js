@@ -9,17 +9,23 @@ import {
 
 let completedTask = 0;
 let allTask = 0;
+let taskFieldNameCurrentValue;
+let editableTaskId;
 
 completedTaskCounter.textContent = `Completed task: ${completedTask}`;
 
 allTaskCounter.textContent = `All tasks: ${allTask}`;
 
 addTaskButton.addEventListener("click", () => {
-  if (addTaskField.value.length != 0) {
+  if (
+    addTaskField.value.length != 0 &&
+    addTaskButton.textContent == "Add Task"
+  ) {
     allTask++;
     allTaskCounter.textContent = `All tasks: ${allTask}`;
     const task = document.createElement("div");
     task.classList.add("task");
+    task.setAttribute("id", Date.now());
 
     const taskChekField = document.createElement("input");
     taskChekField.setAttribute("type", "checkbox");
@@ -43,6 +49,12 @@ addTaskButton.addEventListener("click", () => {
     updateButton.classList.add("task-button-control");
     updateButton.src = "./img/edit.png";
 
+    updateButton.addEventListener("click", (event) => {
+      addTaskButton.textContent = "Update";
+      taskFieldNameCurrentValue = addTaskField.value;
+      editableTaskId = event.target.parentNode.parentNode.getAttribute("id");
+    });
+
     const deleteButton = document.createElement("img");
     deleteButton.classList.add("task-delete-button");
     deleteButton.classList.add("task-button-control");
@@ -51,5 +63,10 @@ addTaskButton.addEventListener("click", () => {
     taskButtons.appendChild(deleteButton);
     task.appendChild(taskButtons);
     tasksFieldWrapper.appendChild(task);
+  } else if (addTaskButton.textContent == "Update") {
+    document.getElementById(editableTaskId).firstChild.lastChild.textContent =
+      addTaskField.value;
+    addTaskButton.textContent = "Add Task";
+    addTaskField.value = "";
   }
 });
